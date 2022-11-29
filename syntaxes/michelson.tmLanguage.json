@@ -1,0 +1,55 @@
+{
+    "scopeName": "source.michelson",
+    "name": "Michelson",
+    "patterns": [
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#block"
+        },
+        {
+            "include": "#instruction"
+        },
+        {
+            "include": "#type"
+        },
+        {
+            "include": "#data"
+        }
+    ],
+    "repository": {
+        "block": {
+            "patterns": [
+                {
+                    "match": "\\b(storage|parameter|code)\\b",
+                    "name": "keyword.control.michelson"
+                }
+            ]
+        },
+        "instruction": {
+            "patterns": [
+                {
+                    "match": "\\b(ABS|IF|SOURCE|DUG|DIG|SAPLING_VERIFY_UPDATE|BLAKE2B|INT|RIGHT|SHA256|AND|VIEW|NIL|STEPS_TO_QUOTA|RENAME|CHECK_SIGNATURE|NEVER|MAP|ADD|IMPLICIT_ACCOUNT|SHA512|LSL|COMPARE|SUB_MUTEZ|SLICE|DROP|BALANCE|CONCAT|MUL|FAILWITH|MIN_BLOCK_TIME|DIP|MEM|XOR|UPDATE|EMPTY_MAP|SWAP|AMOUNT|KECCAK|CHAIN_ID|HASH_KEY|IF_LEFT|CREATE_ACCOUNT|LT|VOTING_POWER|UNPACK|TICKET|SELF|TRANSFER_TOKENS|LE|SOME|CREATE_CONTRACT|SAPLING_EMPTY_STATE|NONE|ADDRESS|GE|SIZE|SENDER|CAR|NOT|CDR|ITER|SHA3|PUSH|LEFT|ISNAT|PACK|IF_CONS|TOTAL_VOTING_POWER|SET_DELEGATE|EMPTY_SET|NEQ|LAMBDA|PAIRING_CHECK|LOOP|EMIT|LSR|EMPTY_BIG_MAP|SPLIT_TICKET|LEVEL|PAIR|READ_TICKET|UNPAIR|GT|NOW|IF_NONE|OR|GET_AND_UPDATE|UNIT|CONTRACT|CAST|JOIN_TICKETS|EDIV|EQ|LOOP_LEFT|OPEN_CHEST|EXEC|GET|NEG|SELF_ADDRESS|DUP|CONS|SUB|APPLY)\\b",
+                    "name": "support.function.michelson"
+                }
+            ]
+        },
+        "type": {
+            "patterns": [
+                {
+                    "match": "\\b(bls12_381_g1|key_hash|sapling_transaction_deprecated|map|sapling_transaction|view|signature|lambda|timestamp|big_map|chain_id|bool|chest|never|sapling_state|operation|option|ticket|key|int|unit|nat|pair|set|bytes|contract|or|mutez|bls12_381_g2|string|constant|address|list|bls12_381_fr|tx_rollup_l2_address|chest_key)\\b",
+                    "name": "entity.name.type.michelson support.type.michelson"
+                }
+            ]
+        },
+        "data": {
+            "patterns": [
+                {
+                    "match": "\\b(False|Pair|Elt|Some|None|Unit|True|Right|Left)\\b",
+                    "name": "variable.other.enummember.michelson"
+                }
+            ]
+        }
+    }
+}

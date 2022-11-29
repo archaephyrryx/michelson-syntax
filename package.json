@@ -1,0 +1,25 @@
+{
+  "name": "michelson-syntax",
+  "displayName": "michelson-syntax",
+  "description": "Syntax Highlighting for the Michelson Smart Contract language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "michelson",
+      "aliases": ["Michelson", "michelson"],
+      "extensions": [".tz",".mtz"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "michelson",
+      "scopeName": "source.michelson",
+      "path": "./syntaxes/michelson.tmLanguage.json"
+    }]
+  }
+}
